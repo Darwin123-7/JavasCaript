@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcualtor</title>
+
+    <style>
+        body {
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            border: 2px solid black;
+            border-radius: 9px;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            width: 300px;
+    
+        }
+        .container h2 {
+            text-align: center;
+            display:flex;
+            justify-content: flex-start;
+        }
+
+        .monitor {
+            border: 2px solid orange;
+            height:50px;
+            width: 80%;
+            display: flex;
+            margin-bottom: 30px;
+            
+        }
+
+        .keys {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-right: 20px;
+            padding-left: 20px;
+            margin-bottom: 30px;
+
+
+        }
+
+        .keys div {
+            border: 2px solid orange;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>Darwin Calculator</h2>
+        <div class="monitor"></div>
+        <div class="keys">
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>+</div>
+            <div>-</div>
+            <div>*</div>
+            <div>/</div>
+            <div>.</div>
+            <div>sin</div>
+            <div>con</div>
+            <div>%</div>
+            <div>del</div>
+            <div>=</div>
+        </div>
+    </div>
+</body>
+</html>
