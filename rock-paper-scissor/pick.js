@@ -9,7 +9,7 @@ function getComputerChoice() {
 
     }
     else {
-        return "Sicssor";
+        return "Scissor";
     }
 
 }
@@ -23,24 +23,28 @@ function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === "Rock" && computerChoice === "Rock" ||
         humanChoice === "Paper" && computerChoice === "Paper" ||
-        humanChoice === "Sicssor" && computerChoice === "Sicssor") {
-
-        console.log(humanChoice);
-        console.log(computerChoice);
+        humanChoice === "Scissor" && computerChoice === "Scissor") {
+        console.log("Human: " + humanChoice);
+        console.log("Computer: " + computerChoice);
+        console.log("Tie")
         return "Tie";
-    }else if ( humanChoice === "Paper" && computerChoice === "Rock" || 
-               humanChoice === "Rock" && computerChoice === "Scissor" ||
-               humanChoice === "Scissor" && computerChoice === "Paper") {
-               console.log(humanChoice);
-               console.log(computerChoice);
-               return `${humanChoice} is greater than ${computerChoice}`;
-    }else if (computerChoice === "Paper" && humanChoice === "Rock" || 
-               computerChoice === "Rock" && humanChoice === "Scissor" ||
-               computerChoice === "Scissor" && humanChoice === "Paper") {
-               console.log(humanChoice);
-               console.log(computerChoice);
-                return `${computerChoice} is greater than ${humanChoice}`;
 
+    }else if ( humanChoice === "Paper" && computerChoice === "Rock" || 
+        humanChoice === "Rock" && computerChoice === "Scissor" ||
+        humanChoice === "Scissor" && computerChoice === "Paper") {
+        console.log("Human: " + humanChoice);
+        console.log("Computer: " + computerChoice);
+        console.log(`${humanChoice} is greater than ${computerChoice}`);
+        console.log("Human Wins")
+        return "Human wins";
+         
+    }else if (computerChoice === "Paper" && humanChoice === "Rock" || 
+        computerChoice === "Rock" && humanChoice === "Scissor" ||
+        computerChoice === "Scissor" && humanChoice === "Paper") {
+        console.log("Human: " + humanChoice);
+        console.log("Computer: " + computerChoice);
+        console.log(`${computerChoice} is greater than ${humanChoice}`);
+        return "Computer Wins";
     }
 }
 
@@ -55,14 +59,73 @@ const computerSelection4 = getComputerChoice();
 const humanSelection5 = getHumanChoice()
 const computerSelection5 = getComputerChoice();
 
- 
-console.log(playRound(humanSelection, computerSelection));
-console.log(playRound(humanSelection2, computerSelection2));
-console.log(playRound(humanSelection3, computerSelection3));
-console.log(playRound(humanSelection4, computerSelection4));
-console.log(playRound(humanSelection5, computerSelection5));
-
-let humanScore = 0;
-console.log("Computer Score: " + humanScore);
-
 let computerScore = 0;
+let humanScore = 0;
+let tie = 0;
+let result = playRound(humanSelection, computerSelection);
+let result1 = playRound(humanSelection2, computerSelection2);
+let result2 = playRound(humanSelection3, computerSelection3);
+let result3 = playRound(humanSelection4, computerSelection4);
+let result4 = playRound(humanSelection5, computerSelection5);
+
+
+if (result === "Human wins") {
+       humanScore++;
+}
+else if (result === "Tie") {
+    tie++;
+}
+else {
+    computerScore++;
+}
+
+
+if (result1 === "Human wins") {
+       humanScore++;
+}
+
+else if (result1 === "Tie") {
+    tie++;
+}
+else {
+    computerScore++;
+}
+
+
+if (result2 === "Human wins") {
+       humanScore++;
+}
+
+else if (result2 === "Tie") {
+    tie++;
+}
+else {
+    computerScore++;
+}
+
+
+if (result3 === "Human wins") {
+       humanScore++;
+}
+
+else if (result3 === "Tie") {
+    tie++;
+}
+else {
+    computerScore++;
+}
+
+if (result4 === "Human wins") {
+       humanScore++;
+}
+
+else if (result4=== "Tie") {
+    tie++;
+}
+else {
+    computerScore++;
+}
+
+console.log ("Human Score: " + humanScore);
+console.log("COmputer Score: " + computerScore);
+console.log("Tie: " + tie);

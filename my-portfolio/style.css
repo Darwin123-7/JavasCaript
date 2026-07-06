@@ -1,0 +1,133 @@
+body {
+    font-family: sans-serif, Helvetica;
+    background: white;
+    color: black;
+    height: 100%;
+}
+
+
+.about-me {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+.logo img {
+    border: 2px solid black;
+    width: auto;
+    height: 49px;
+    flex-wrap: wrap;
+    border-radius: 50%;
+}
+
+
+.more-info {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.contents {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+
+}
+.profile {
+    justify-content: center;
+}
+.photo img {
+    flex-wrap: wrap;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    border-radius: 50%;
+}
+.skills {
+    margin-bottom: 20px;
+    flex-grow: 1;
+
+}
+.skill-list {
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+
+.sets {
+    gap: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.skills img {
+    width: 90px;
+    height: 70px;
+}
+h3 {
+    text-align: center;
+}
+span {
+    background-color: oklch (0.967 0.003 264.542);
+    color: oklch(0.525 0.223 3.958);
+    text-align: center;
+    border-radius: 7px;
+    padding: 10px;
+}
+
+.text {
+    width: 750px;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    
+}
+.projects {
+    height: 200px;
+    width: 700px;
+    border: 1px solid black;
+    border-radius: 9px;
+    display: flex;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.flex{
+    margin-bottom: 30px;
+
+}
+.copyright {
+    text-align: center;
+    border-top: 1px solid black;
+    font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: oklch(0.525 0.223 3.958);
+        padding: 10px;
+
+}
