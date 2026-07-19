@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--Write a code that has 2 choices. if the answer is correct give a a pop up that says its correct-->
+    
+    <div id="question">Who is the first Philippine President</div>
+
+    <script>
+        
+        function addColor(elem) {
+            const bgColor = "red";
+            const borderColor = "1px solid green";
+
+            elem.style.backgroundColor = bgColor;
+            elem.style.border = borderColor;
+
+            let event = new CustomEvent('mark', function (event) {
+                detail: {
+                        backgroundColor: bgColor;
+                        border: borderColor;
+
+                }
+        });
+        elem.dispatch(event);
+    }
+
+    let div = document.querySelector("#question");
+
+    div.addEventListener('mark', function (e) {
+        console.log(e.detail);
+    });
+
+    addColor(div);
+    
+    </script>
+</body>
+</html>

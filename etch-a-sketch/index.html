@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 320px;
+        }
+
+        .box:hover {
+            background: red;
+
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="container"></div>
+
+    <script>
+
+        const container = document.querySelector("#container");
+
+        for (let i = 0; i < 256; i++) {
+            const box = document.createElement("div");
+            box.style.border = "1px solid black";
+            box.style.height = "20px";
+            box.style.width = "18px";
+            box.classList.add("box");
+            container.appendChild(box);
+        }
+
+    </script>
+</body>
+</html>
