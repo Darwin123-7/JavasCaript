@@ -14,11 +14,6 @@ function getComputerChoice() {
 
 }
 
-function getHumanChoice() {
-    let human = prompt("Enter Choice: ");
-    return human;
-}
-
 function playRound(humanChoice, computerChoice) {
 
     if (humanChoice === "Rock" && computerChoice === "Rock" ||
@@ -47,85 +42,121 @@ function playRound(humanChoice, computerChoice) {
         return "Computer Wins";
     }
 }
-
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-const humanSelection2 = getHumanChoice()
-const computerSelection2 = getComputerChoice();
-const humanSelection3 = getHumanChoice();
-const computerSelection3 = getComputerChoice();
-const humanSelection4 = getHumanChoice()
-const computerSelection4 = getComputerChoice();
-const humanSelection5 = getHumanChoice()
-const computerSelection5 = getComputerChoice();
-
 let computerScore = 0;
 let humanScore = 0;
 let tie = 0;
-let result = playRound(humanSelection, computerSelection);
-let result1 = playRound(humanSelection2, computerSelection2);
-let result2 = playRound(humanSelection3, computerSelection3);
-let result3 = playRound(humanSelection4, computerSelection4);
-let result4 = playRound(humanSelection5, computerSelection5);
+
+const rock = document.querySelector("#rock")
+const paper = document.querySelector("#paper");
+const scissor = document.querySelector("#scissor");
 
 
-if (result === "Human wins") {
-       humanScore++;
-}
-else if (result === "Tie") {
-    tie++;
-}
-else {
-    computerScore++;
-}
+let display = document.createElement("div");
+document.body.appendChild(display);
+
+let humanScored = document.createElement("div");
+document.body.appendChild(humanScored);
+let computerScored = document.createElement("div");
+document.body.appendChild(computerScored);
+
+let winner = document.createElement("div");
+document.body.appendChild(winner);
 
 
-if (result1 === "Human wins") {
-       humanScore++;
-}
 
-else if (result1 === "Tie") {
-    tie++;
-}
-else {
-    computerScore++;
-}
+    rock.addEventListener("click", (e) => {
+    let result = playRound("Rock", getComputerChoice())
+    display.textContent = result;
+
+        if (result === "Computer Wins" ) {
+        computerScore++;
+    }   
+
+    else if (result === "Human wins") {
+        humanScore++;
+    }
+
+    else {
+        tie++;
+    }
+
+    if (humanScore >= 5) {
+    winner.textContent = "Human dumbass";
+    }
+
+    if (computerScore >= 5) {
+    winner.textContent = "computer win dumbass";
+    }
+
+    computerScored.textContent = "Computer Score: " + computerScore;
+    humanScored.textContent = "Human Score: " + humanScore;
+
+    });
+
+    paper.addEventListener("click", (e) => {
+        let result = playRound("Paper", getComputerChoice());
+        display.textContent = result;
+
+        if (result === "Computer Wins") {
+        computerScore++;
+    }   
+
+    else if (result === "Human wins") {
+        humanScore++;
+    }
 
 
-if (result2 === "Human wins") {
-       humanScore++;
-}
+    else {
+        tie++;
+    }
 
-else if (result2 === "Tie") {
-    tie++;
-}
-else {
-    computerScore++;
-}
+    if (humanScore >= 5) {
+    winner.textContent = "Human Wins dumbass";
+    }
+
+    if (computerScore >= 5) {
+    winner.textContent = "Computer Win dumbass";
+    }
+
+    computerScored.textContent = "Computer Score: " + computerScore;
+    humanScored.textContent = "Human Score: " + humanScore;
+
+    });
+
+    scissor.addEventListener("click", (e) => {
+        let result = playRound("Scissor", getComputerChoice());
+        display.textContent = result;
+
+    if (result === "Computer Wins") {
+        computerScore++;
+    }   
+
+    else if (result === "Human wins") {
+        humanScore++;
+    }
+
+    else {
+        tie++;
+    }
+
+    if (humanScore >= 5) {
+    winner.textContent = "Human Wins"
+    }
+
+    if (computerScore >= 5) {
+    winner.textContent = "Computer Win"
+    }
+
+    computerScored.textContent = "Computer Score: " + computerScore;
+    humanScored.textContent = "Human Score: " + humanScore;
+
+    
+    });
+
+    
 
 
-if (result3 === "Human wins") {
-       humanScore++;
-}
 
-else if (result3 === "Tie") {
-    tie++;
-}
-else {
-    computerScore++;
-}
 
-if (result4 === "Human wins") {
-       humanScore++;
-}
 
-else if (result4=== "Tie") {
-    tie++;
-}
-else {
-    computerScore++;
-}
 
-console.log ("Human Score: " + humanScore);
-console.log("COmputer Score: " + computerScore);
-console.log("Tie: " + tie);
